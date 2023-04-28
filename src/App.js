@@ -48,7 +48,7 @@ function App() {
     setUpdateData('');
   }
 
-  // Change task for update
+  // chnage the Task or Edit
   const changeTask = (e) => {
     let newEntry = {
       id: updateData.id,
@@ -58,7 +58,7 @@ function App() {
     setUpdateData(newEntry);
   }
 
-  // Update task
+  // Task will be updated once Edited
   const updateTask = () => {
     let filterRecords = [...toDo].filter( task => task.id !== updateData.id );
     let updatedObject = [...filterRecords, updateData]
@@ -71,7 +71,7 @@ function App() {
     <div className="container App ">
 
     <br /><br />
-    <h2>My Shopping To- do List</h2>
+    <h2>My Shopping To- Do List</h2>
     <br /><br />
 
     {updateData && updateData ? (
@@ -89,7 +89,7 @@ function App() {
       />
     )}
 
-    {/* Display ToDos */}
+    {/* All the list of tasks will be displayed */}
 
     {toDo && toDo.length ? '' : 'No Tasks...'}
 
