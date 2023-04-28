@@ -1,3 +1,10 @@
+The tech stack I have used for this Project is :
+
+React.js
+Bootstrap
+Font Awesome
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
