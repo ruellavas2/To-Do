@@ -1,7 +1,7 @@
 The tech stack I have used for this Project is :
 
-React.js
-Bootstrap
+React.js,
+Bootstrap,
 Font Awesome
 
 
