@@ -91,7 +91,7 @@ function App() {
 
     {/* All the list of tasks will be displayed */}
 
-    {toDo && toDo.length ? '' : 'No Tasks...'}
+    {toDo && toDo.length ? '' : 'No Tasks to complete :) '}
 
     <ToDo
       toDo={toDo}
