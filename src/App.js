@@ -1,7 +1,8 @@
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 import AddTaskForm from './components/AddTaskForm.js';
 import UpdateForm from './components/UpdateForm.js';
 import ToDo from './components/ToDo.js';
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -9,12 +10,28 @@ import './App.css';
 
 function App() {
 
-  // Tasks (ToDo List) State
-  const [toDo, setToDo] = useState([]);
+  // Tasks (ToDo List) State will store all tasks
+  const [toDo, setToDo] = useState(() => {
+    const saved = localStorage.getItem('');
+    const initialValue = JSON.parse(saved);
+    return initialValue || "";
+
+ 
+  }
+  );
 
   // Temp State
   const [newTask, setNewTask] = useState('');
   const [updateData, setUpdateData] = useState('');
+ 
+
+
+  useEffect (() => {
+    localStorage.setItem('', JSON.stringify(toDo));
+  }, [toDo]);
+ 
+   
+   
 
   // Add addtask 
     const addTask = () => {
@@ -66,6 +83,9 @@ function App() {
     setUpdateData('');
   }
 
+  //
+
+
   return (
     <div className="body">
     <div className="container App ">
@@ -89,9 +109,11 @@ function App() {
       />
     )}
 
-    {/* All the list of tasks will be displayed */}
+    {/* All the list of tasks will be displayed here */}
 
     {toDo && toDo.length ? '' : 'No Tasks to complete :) '}
+
+    
 
     <ToDo
       toDo={toDo}
